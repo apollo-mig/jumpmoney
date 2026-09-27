@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JumpMoney – Private Budget &amp; Bill Tracker</title>
+<meta name="description" content="Budgets, bills, goals, debts, investments and net worth in one private app for iPhone and iPad. No account, no ads, no tracking. Your data stays on your device.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%234080ff'/%3E%3Cstop offset='1' stop-color='%231c33d1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ccircle cx='47' cy='15' r='8' fill='%23ffc83d'/%3E%3Cpath d='M33 22h9v19a14 14 0 0 1-28 0v-2h9v2a5 5 0 0 0 10 0z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f6f7fb;--surface:#fff;--surface-2:#eef1f8;--text:#0f172a;--muted:#5b6475;--border:#e2e6ef;--accent:#2f5bff;--accent-strong:#1c33d1;--accent-soft:#e8edff;--gold:#e9a514;--ok:#15803d;--shadow:0 1px 2px rgba(15,23,42,.05),0 10px 30px rgba(15,23,42,.07);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0a0e18;--surface:#121929;--surface-2:#182136;--text:#e7ebf4;--muted:#9ba5b9;--border:#232e47;--accent:#86a2ff;--accent-strong:#5b7bff;--accent-soft:#1a2542;--gold:#ffc83d;--ok:#4ade80;--shadow:0 0 0 1px rgba(255,255,255,.02)}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text)}
+.brand:hover{text-decoration:none}
+.brand svg{width:32px;height:32px;border-radius:8px}
+nav.links{display:flex;gap:20px;font-size:15px}
+nav.links a{color:var(--muted)}
+nav.links a[aria-current=page]{color:var(--text);font-weight:600}
+.hero{padding:72px 0 40px;text-align:center}
+.hero .icon{width:128px;height:128px;border-radius:29px;box-shadow:0 20px 50px rgba(47,91,255,.28)}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.08;letter-spacing:-.02em;margin:28px 0 14px}
+.lede{font-size:clamp(18px,2.4vw,21px);color:var(--muted);max-width:640px;margin:0 auto}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:16px}
+.pill.primary{background:var(--text);color:var(--bg)}
+.pill.ghost{border:1px solid var(--border);color:var(--text);background:var(--surface)}
+.pill.ghost:hover{text-decoration:none;border-color:var(--accent)}
+.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0 12px}
+.promise{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.promise b{display:block;font-size:16px}
+.promise span{color:var(--muted);font-size:15px}
+section{padding:48px 0}
+h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.015em;line-height:1.15;margin:0 0 10px}
+.sub{color:var(--muted);margin:0 0 28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:12px 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.glyph{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.glyph svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.band{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:32px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:start}
+.band ul{margin:0;padding-left:20px;color:var(--muted)}
+.band li{margin:6px 0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+footer.site{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer.site nav{display:flex;gap:18px}
+.fine{font-size:13px;color:var(--muted);margin-top:8px;flex-basis:100%}
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}.promises{grid-template-columns:repeat(2,1fr)}.band{grid-template-columns:1fr}}
+@media (max-width:560px){body{font-size:16px}.grid,.promises{grid-template-columns:1fr}.hero{padding-top:48px}.hero .icon{width:104px;height:104px;border-radius:24px}nav.links{gap:14px}.band{padding:22px}}
+@media (prefers-reduced-motion:no-preference){.card,.promise{transition:transform .2s ease,border-color .2s ease}.card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}}
+@media (max-width:400px){.wordmark{display:none}nav.links{gap:14px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="jm-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4080ff"/><stop offset="1" stop-color="#1c33d1"/></linearGradient>
+    <clipPath id="jm-cf"><ellipse cx="778" cy="196" rx="130" ry="78" transform="rotate(-28 778 196)"/></clipPath>
+    <symbol id="jm-logo" viewBox="0 0 1024 1024">
+      <rect width="1024" height="1024" rx="230" fill="url(#jm-bg)"/>
+      <g transform="translate(512 512) scale(0.9366) translate(-538.77 -490.49)">
+        <path d="M892.8 135 914.4 175.6 684.8 297.6 663.2 257Z" fill="#c9780e"/>
+        <ellipse cx="799.6" cy="236.6" rx="130" ry="78" transform="rotate(-28 799.6 236.6)" fill="#c9780e"/>
+        <ellipse cx="778" cy="196" rx="130" ry="78" transform="rotate(-28 778 196)" fill="#ffc83d"/>
+        <g clip-path="url(#jm-cf)">
+          <ellipse cx="790.2" cy="219" rx="114.4" ry="68.6" transform="rotate(-28 790.2 219)" fill="#ffe7a8"/>
+          <ellipse cx="765.8" cy="173" rx="114.4" ry="68.6" transform="rotate(-28 765.8 173)" fill="#ffc83d"/>
+        </g>
+        <path d="M511 436.9 669 373.1V640A237 237 0 0 1 432 877 237 237 0 0 1 195 640V656.9L353 593.1V640A79 79 0 0 0 432 719 79 79 0 0 0 511 640Z" transform="translate(0 640) skewX(-9) translate(0 -640)" fill="#fff"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./"><svg role="img" aria-label="JumpMoney icon"><use href="#jm-logo"/></svg><span class="wordmark">JumpMoney</span></a>
+    <nav class="links" aria-label="Site">
+      <a href="#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <svg class="icon" role="img" aria-label="JumpMoney app icon"><use href="#jm-logo"/></svg>
+      <h1 id="title">Your money.<br>On your device.</h1>
+      <p class="lede">Budgets, bills, goals, debts, investments and net worth in one private app for iPhone and iPad. No account. No ads. No tracking. It works fully offline.</p>
+      <div class="cta">
+        <!-- After App Review approves the app, replace this span with:
+             <a class="pill primary" href="https://apps.apple.com/app/idAPPLE_ID">Download on the App Store</a>
+             (the numeric Apple ID is on App Store Connect › App Information). -->
+        <span class="pill primary">Coming soon to the App Store</span>
+        <a class="pill ghost" href="privacy.html">How your privacy is protected</a>
+      </div>
+    </section>
+
+    <div class="promises">
+      <div class="promise"><b>Works offline</b><span>Every feature works in airplane mode.</span></div>
+      <div class="promise"><b>Stays on your device</b><span>No cloud sync, and no servers of ours.</span></div>
+      <div class="promise"><b>No account</b><span>No sign-up, no ads, no analytics.</span></div>
+      <div class="promise"><b>You own your data</b><span>Back up, export or erase it any time.</span></div>
+    </div>
+
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title">Everything in one place</h2>
+      <p class="sub">The tools of a full personal-finance suite, built for iPhone and iPad and kept private.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>Transactions</h3>
+          <p>Expenses, income and transfers across all your accounts, with category splits, tags, templates, auto-categorize rules and receipt scanning that runs on the device.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9l7 4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Budgets &amp; goals</h3>
+          <p>Weekly, monthly or yearly budgets with rollover and alerts, a Safe to Spend figure, and savings goals that track your pace.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+          <h3>Bills &amp; subscriptions</h3>
+          <p>Recurring bills, salary and SIPs, reminders with Mark Paid and Skip, a bill calendar, and a 30/60/90-day cash-flow forecast.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Reports</h3>
+          <p>Category breakdowns with drill-down, income vs expense, cash flow, top payees, trends and period comparisons, with PDF and CSV export.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <h3>Net worth &amp; debts</h3>
+          <p>Accounts plus the assets and liabilities you add, with a history chart. Loans have EMI schedules, prepayment what-ifs and a snowball vs avalanche planner.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 15.5c.9-.9 1.9-1.5 3-1.5 2.8 0 5 2.2 5 5"/></svg></div>
+          <h3>Split with friends</h3>
+          <p>Share bills equally, by amounts, percentages or shares. See group balances and settle up in the fewest payments.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></svg></div>
+          <h3>Investments</h3>
+          <p>A portfolio tracker you update by hand, for stocks, funds, ETFs, bonds, deposits, gold, crypto and more. It records dividends, average cost and realised capital gains.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg></div>
+          <h3>Salary, tax &amp; calculators</h3>
+          <p>Take-home and income-tax estimates for India and 12 more countries, plus 16 calculators from loan EMI and SIP to retirement and inflation.</p>
+        </article>
+        <article class="card">
+          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+          <h3>Private by design</h3>
+          <p>An optional Face ID app lock, Hide Amounts, password-protected backups, CSV/OFX/QIF import and Siri shortcuts, all on the device.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="live-title">
+      <div class="band">
+        <div>
+          <span class="tag">Optional</span>
+          <h2 id="live-title">Live Prices, only if you want them</h2>
+          <p class="sub" style="margin-bottom:0">JumpMoney never goes online unless you turn on Live Prices in Settings. It is off by default. Turn it on to download public exchange rates and gold, silver, platinum, palladium and copper prices.</p>
+        </div>
+        <ul>
+          <li>Requests ask only for prices in a currency, such as INR or USD.</li>
+          <li>No account, identifiers or cookies, and none of your financial data, are sent.</li>
+          <li>Leave it off and enter rates yourself. Everything else keeps working.</li>
+          <li>The <a href="privacy.html#live-prices">privacy policy</a> lists the exact services contacted.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 BalaSriharsha Cheeday</span>
+    <nav aria-label="Footer"><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></nav>
+    <p class="fine">Salary, tax, capital-gains and metal-price figures are estimates for planning, not financial or tax advice. Apple, iPhone, iPad, Face ID, Siri and App Store are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support – JumpMoney</title>
+<meta name="description" content="JumpMoney help: sample data, backups and restore, moving to a new phone, Face ID, Live Prices, tax estimates, deleting data, and how to contact us.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%234080ff'/%3E%3Cstop offset='1' stop-color='%231c33d1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ccircle cx='47' cy='15' r='8' fill='%23ffc83d'/%3E%3Cpath d='M33 22h9v19a14 14 0 0 1-28 0v-2h9v2a5 5 0 0 0 10 0z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f6f7fb;--surface:#fff;--surface-2:#eef1f8;--text:#0f172a;--muted:#5b6475;--border:#e2e6ef;--accent:#2f5bff;--accent-soft:#e8edff;--warn-soft:#fff6e0;--warn:#a16207;--shadow:0 1px 2px rgba(15,23,42,.05),0 10px 30px rgba(15,23,42,.07);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0a0e18;--surface:#121929;--surface-2:#182136;--text:#e7ebf4;--muted:#9ba5b9;--border:#232e47;--accent:#86a2ff;--accent-soft:#1a2542;--warn-soft:#2a2210;--warn:#fbbf24;--shadow:0 0 0 1px rgba(255,255,255,.02)}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text)}
+.brand:hover{text-decoration:none}
+.brand svg{width:32px;height:32px;border-radius:8px}
+nav.links{display:flex;gap:20px;font-size:15px}
+nav.links a{color:var(--muted)}
+nav.links a[aria-current=page]{color:var(--text);font-weight:600}
+.page{max-width:780px;margin:0 auto;padding:48px 0 24px}
+h1{font-size:clamp(32px,5vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 8px}
+.lede{color:var(--muted);margin:0 0 28px;font-size:18px}
+h2{font-size:23px;letter-spacing:-.01em;margin:40px 0 14px}
+.contact-card{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow)}
+.contact-card p{margin:0;color:var(--muted)}
+.contact-card strong{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;background:var(--text);color:var(--bg);font-weight:600;font-size:15.5px;white-space:nowrap}
+.btn:hover{text-decoration:none;opacity:.9}
+.faq{display:grid;gap:10px}
+details{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
+details[open]{border-color:color-mix(in srgb,var(--accent) 35%,var(--border))}
+summary{cursor:pointer;list-style:none;padding:16px 48px 16px 20px;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:20px;top:50%;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .2s ease}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.answer{padding:0 20px 16px;color:var(--text)}
+.answer p{margin:0 0 10px}
+.answer ol,.answer ul{margin:0 0 10px;padding-left:22px}
+.answer li{margin:4px 0}
+.path{font-weight:600;white-space:nowrap}
+.callout{background:var(--warn-soft);border-left:4px solid var(--warn);border-radius:10px;padding:10px 14px;font-size:15.5px}
+footer.site{border-top:1px solid var(--border);padding:28px 0 40px;color:var(--muted);font-size:14px;margin-top:40px}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer.site nav{display:flex;gap:18px}
+@media (max-width:560px){body{font-size:16px}.page{padding-top:32px}nav.links{gap:14px}.path{white-space:normal}}
+@media (prefers-reduced-motion:reduce){summary::after{transition:none}}
+@media (max-width:400px){.wordmark{display:none}nav.links{gap:14px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="jm-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4080ff"/><stop offset="1" stop-color="#1c33d1"/></linearGradient>
+    <clipPath id="jm-cf"><ellipse cx="778" cy="196" rx="130" ry="78" transform="rotate(-28 778 196)"/></clipPath>
+    <symbol id="jm-logo" viewBox="0 0 1024 1024">
+      <rect width="1024" height="1024" rx="230" fill="url(#jm-bg)"/>
+      <g transform="translate(512 512) scale(0.9366) translate(-538.77 -490.49)">
+        <path d="M892.8 135 914.4 175.6 684.8 297.6 663.2 257Z" fill="#c9780e"/>
+        <ellipse cx="799.6" cy="236.6" rx="130" ry="78" transform="rotate(-28 799.6 236.6)" fill="#c9780e"/>
+        <ellipse cx="778" cy="196" rx="130" ry="78" transform="rotate(-28 778 196)" fill="#ffc83d"/>
+        <g clip-path="url(#jm-cf)">
+          <ellipse cx="790.2" cy="219" rx="114.4" ry="68.6" transform="rotate(-28 790.2 219)" fill="#ffe7a8"/>
+          <ellipse cx="765.8" cy="173" rx="114.4" ry="68.6" transform="rotate(-28 765.8 173)" fill="#ffc83d"/>
+        </g>
+        <path d="M511 436.9 669 373.1V640A237 237 0 0 1 432 877 237 237 0 0 1 195 640V656.9L353 593.1V640A79 79 0 0 0 432 719 79 79 0 0 0 511 640Z" transform="translate(0 640) skewX(-9) translate(0 -640)" fill="#fff"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./"><svg role="img" aria-label="JumpMoney icon"><use href="#jm-logo"/></svg><span class="wordmark">JumpMoney</span></a>
+    <nav class="links" aria-label="Site">
+      <a href="./#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html" aria-current="page">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page">
+    <h1>Support</h1>
+    <p class="lede">Answers to common questions about JumpMoney for iPhone and iPad. Can't find what you need? Email us. We read every message.</p>
+
+    <div class="contact-card" id="contact">
+      <p><strong>Contact</strong><br>support@magadhaintelligence.com</p>
+      <a class="btn" href="mailto:support@magadhaintelligence.com?subject=JumpMoney%20support">Email support</a>
+    </div>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+
+      <details id="sample-data">
+        <summary>How can I try JumpMoney with example data?</summary>
+        <div class="answer">
+          <p>Go to <span class="path">More › Settings › Load Sample Data</span> and tap <strong>Add Sample Data</strong>. It adds about three months of example accounts, transactions, budgets, bills, goals, debts, investments and assets in your base currency. You can also switch on <strong>Add Sample Data</strong> on the last welcome screen.</p>
+          <p>Sample data is only ever added, never used to replace your own entries. To start fresh afterwards, use <a href="#delete">Erase All Data</a>.</p>
+        </div>
+      </details>
+
+      <details id="backup">
+        <summary>How do I back up my data?</summary>
+        <div class="answer">
+          <ol>
+            <li>Open <span class="path">More › Backup &amp; Export</span>.</li>
+            <li>Choose whether to <strong>Include Receipt Images</strong>. They can make the file large.</li>
+            <li>Optionally turn on <strong>Protect with Password</strong> and enter a password of at least 8 characters. The backup is then encrypted with AES-256.</li>
+            <li>Tap <strong>Create Backup</strong>, then <strong>Save to Files…</strong> (for example to iCloud Drive) or <strong>Share Backup…</strong> (for example with AirDrop).</li>
+          </ol>
+          <p>You can also turn on <strong>Weekly Backup</strong>. JumpMoney then keeps its five newest automatic backups inside the app, without receipt images. Touch and hold one to save a copy to Files.</p>
+          <p class="callout">Keep your backup password safe. JumpMoney never stores it and can't recover a forgotten password. Automatic backups are deleted along with the app, so save a copy to Files now and then.</p>
+        </div>
+      </details>
+
+      <details id="restore">
+        <summary>How do I restore a backup?</summary>
+        <div class="answer">
+          <ol>
+            <li>Open <span class="path">More › Backup &amp; Export › Restore from Backup…</span> and pick the backup file. For an automatic backup, tap it in the <strong>Automatic Backups</strong> list instead.</li>
+            <li>If the file is password-protected, enter its password.</li>
+            <li>Check the preview, then choose <strong>Replace All Data</strong> (swap everything on this device for the backup) or <strong>Merge with Existing Data</strong> (add only what's missing).</li>
+          </ol>
+        </div>
+      </details>
+
+      <details id="new-phone">
+        <summary>How do I move JumpMoney to a new iPhone or iPad?</summary>
+        <div class="answer">
+          <p>JumpMoney has no cloud account, so you move your data with a backup file:</p>
+          <ol>
+            <li>On your old device, create a backup (see <a href="#backup">How do I back up my data?</a>) and save it to iCloud Drive or AirDrop it to the new device.</li>
+            <li>On the new device, install JumpMoney from the App Store and open it.</li>
+            <li>Go to <span class="path">More › Backup &amp; Export › Restore from Backup…</span>, pick the file and choose <strong>Replace All Data</strong>.</li>
+          </ol>
+          <p>Setting up the new device from an iCloud or computer backup of the old one, or with Quick Start, usually brings JumpMoney's data along too, because iOS includes app data in device backups. Make a JumpMoney backup file first anyway, just in case.</p>
+        </div>
+      </details>
+
+      <details id="sync">
+        <summary>Does JumpMoney sync between my devices?</summary>
+        <div class="answer">
+          <p>No, by design. Your data never leaves the device it was entered on. To copy it to another device, <a href="#backup">make a backup</a> and <a href="#restore">restore</a> it there.</p>
+        </div>
+      </details>
+
+      <details id="face-id">
+        <summary>How do I lock JumpMoney with Face ID?</summary>
+        <div class="answer">
+          <p>Turn on <span class="path">More › Settings › App Lock</span>. JumpMoney then asks for Face ID, Touch ID or your device passcode every time it opens, and hides its screen in the app switcher.</p>
+          <ul>
+            <li><strong>"App Lock Unavailable":</strong> your device has no passcode. Set one in <span class="path">Settings › Face ID &amp; Passcode</span> first.</li>
+            <li><strong>Face ID is never offered:</strong> in the iOS Settings app, open <span class="path">Face ID &amp; Passcode › Other Apps</span> and allow JumpMoney. You can always unlock with your passcode instead.</li>
+            <li>For extra privacy, <strong>Hide Amounts</strong> (in the same section) shows •••• instead of numbers.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details id="live-prices">
+        <summary>What is Live Prices, and what does it send?</summary>
+        <div class="answer">
+          <p>Live Prices is an optional setting (<span class="path">More › Settings › Live Prices</span>) that is <strong>off by default</strong>. When you turn it on, JumpMoney downloads public currency exchange rates (about twice a day, or when you tap <strong>Update exchange rates now</strong>) and gold, silver, platinum, palladium and copper spot prices.</p>
+          <p>Each request asks only for prices in a currency. No account, identifiers, cookies or financial data are sent. With Live Prices off, JumpMoney never goes online and uses the rates you enter under <span class="path">More › Currencies</span>. The <a href="privacy.html#live-prices">privacy policy</a> lists the exact services contacted.</p>
+          <p><strong>My rates didn't update:</strong></p>
+          <ul>
+            <li>"No other currencies are in use yet" means all your accounts use your base currency, so there is nothing to convert.</li>
+            <li>"Live prices aren't available in …" means the price service doesn't cover that currency. Enter its rate by hand under Currencies.</li>
+            <li>If you're offline, JumpMoney keeps using the last downloaded or manual rates.</li>
+          </ul>
+          <p>Note that an exchange-rate update replaces rates you typed in by hand for the currencies you use.</p>
+        </div>
+      </details>
+
+      <details id="reminders">
+        <summary>How do bill reminders work?</summary>
+        <div class="answer">
+          <p>Turn on <span class="path">More › Settings › Reminders &amp; Alerts</span> and allow notifications. JumpMoney reminds you at 9:00 on the day you choose before a bill, card payment or loan instalment is due, and alerts you when a budget nears its limit. Reminders are scheduled on your device. Touch and hold a bill reminder to <strong>Mark Paid</strong> or <strong>Skip</strong> without opening the app.</p>
+          <p>While Hide Amounts or App Lock is on, notifications leave out amounts, because they can appear on the Lock Screen.</p>
+        </div>
+      </details>
+
+      <details id="siri">
+        <summary>Can I use Siri or Shortcuts?</summary>
+        <div class="answer">
+          <p>Yes. Say, for example, "Add an expense in JumpMoney", "Add income in JumpMoney", "Transfer money in JumpMoney" or "What's my balance in JumpMoney", or add these actions in the Shortcuts app. They work offline and need your device to be unlocked. Balances are never spoken while Hide Amounts or App Lock is on.</p>
+        </div>
+      </details>
+
+      <details id="import">
+        <summary>Can I import my bank statement?</summary>
+        <div class="answer">
+          <p>Yes. Download a CSV, OFX/QFX or QIF statement from your bank's website, then open <span class="path">More › Backup &amp; Export › Import Bank Statement…</span>. You can map columns for CSV files and preview the rows first. Duplicates are skipped, and your Auto-Categorize Rules are applied. JumpMoney never connects to your bank directly.</p>
+        </div>
+      </details>
+
+      <details id="tax">
+        <summary>How accurate are the salary and tax results?</summary>
+        <div class="answer">
+          <p>Salary &amp; Tax, capital gains and the calculators give <strong>estimates to help you plan. They are not financial or tax advice.</strong> Each country screen shows the tax year and assumptions it uses, and the built-in countries list their official sources. Tax rules change and personal situations vary, so check important figures with a qualified professional or your tax authority before you file or make decisions.</p>
+          <p>Local gold and silver prices are also estimates, based on the international spot price plus the duty, tax and local premium you can adjust.</p>
+        </div>
+      </details>
+
+      <details id="delete">
+        <summary>How do I delete all my data?</summary>
+        <div class="answer">
+          <p>Go to <span class="path">More › Settings › Erase All Data</span>, type <strong>DELETE</strong> and confirm. Every account, transaction, budget, goal, debt, investment, asset and receipt on the device, and the automatic backups, are permanently deleted. Default categories and an empty Cash account are then recreated.</p>
+          <p>Deleting the app also removes everything stored in it. Backup files you saved elsewhere, for example in Files or iCloud Drive, are not affected, so delete those yourself if you want them gone. We hold no copy of your data, so there's nothing more to delete on our side.</p>
+        </div>
+      </details>
+    </div>
+
+    <h2>Still need help?</h2>
+    <p>Email <a href="mailto:support@magadhaintelligence.com?subject=JumpMoney%20support">support@magadhaintelligence.com</a> with your app version (<span class="path">More › Settings › About</span>), your device model and iOS version, and the steps that lead to the problem. Please don't send backups or other financial data.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 BalaSriharsha Cheeday</span>
+    <nav aria-label="Footer"><a href="./">Home</a><a href="privacy.html">Privacy Policy</a></nav>
+  </div>
+</footer>
+</body>
+</html>
